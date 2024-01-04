@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Tx/xG5iWJ2ZtvtudsrEDvO9uwCtxZIHEpbBuvkcugPkdtr8LkdqPEzLqzziEA1kWxae6pKy45lTh+makH30niA==",
+  "dgSpecHash": "j5COlcQKf/R7kRvl9mlkYOZ/wuI2HNbOQFEusRt8yT3w+AwdreADm7LmJ3om8kvZC1wh/u6p8zUiJhOjsiIbFQ==",
   "success": true,
-  "projectFilePath": "/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/Client.csproj",
+  "projectFilePath": "C:\\Users\\PC-i9\\source\\repos\\IdentityServer4Client\\Client\\Client.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

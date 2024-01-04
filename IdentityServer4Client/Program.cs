@@ -1,35 +1,7 @@
 ﻿using IdentityServer4.Models;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddIdentityServer()
-    .AddDeveloperSigningCredential()
-    .AddInMemoryApiResources(new List<ApiResource>
-    {
-        new ApiResource("api1", "My API")
-    })
-    .AddInMemoryClients(new List<Client>
-    {
-        new Client
-        {
-            ClientId = "client",
-            AllowedGrantTypes = GrantTypes.ClientCredentials,
-            ClientSecrets =
-            {
-                new Secret("secret".Sha256())
-            },
-            AllowedScopes = { "api1" }
-        }
-    });
-
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer(options =>
-    {
-        options.Authority = "http://localhost:5000";
-        options.RequireHttpsMetadata = false;
-        options.Audience = "api1";
-    });
 
 
 builder.Services.AddControllers();
@@ -37,6 +9,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
+
+ConfigureApp(builder);
 
 var app = builder.Build();
 
@@ -47,6 +21,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseRouting();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
@@ -55,3 +31,43 @@ app.MapControllers();
 
 app.Run();
 
+
+void ConfigureApp(WebApplicationBuilder app)
+{
+    app.Services.AddIdentityServer()
+        .AddInMemoryApiResources(new ApiResource[]
+        {
+            new ApiResource("api1", "My API")
+        })
+        .AddInMemoryClients(new Client[]
+        {
+            new Client
+            {
+                ClientId = "client",
+                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                ClientSecrets =
+                {
+                    new Secret("secret".Sha256())
+                },
+                AllowedScopes = { "api1" },
+                AccessTokenLifetime = 3600, // Set token lifetime in seconds
+                // Enable JWT token support
+                AccessTokenType = AccessTokenType.Jwt,
+                RequireClientSecret = false // For client credentials flow, you may not need a client secret
+            }
+        })
+        .AddDeveloperSigningCredential();
+
+    app.Services.Configure<MvcOptions>(options =>
+    {
+        options.Filters.Add(new RequireHttpsAttribute());
+    });
+
+    app.Services.AddAuthentication("Bearer")
+        .AddJwtBearer("Bearer", options =>
+        {
+            options.Authority = "https://localhost:7074"; // IdentityServer URL
+            options.RequireHttpsMetadata = false; // Only for development; use true in production
+            options.Audience = "api1"; // API resource name
+        });
+}
