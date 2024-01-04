@@ -1,0 +1,15 @@
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/bin/Debug/net7.0/Client
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/bin/Debug/net7.0/Client.deps.json
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/bin/Debug/net7.0/Client.runtimeconfig.json
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/bin/Debug/net7.0/Client.dll
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/bin/Debug/net7.0/Client.pdb
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/obj/Debug/net7.0/Client.csproj.AssemblyReference.cache
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/obj/Debug/net7.0/Client.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/obj/Debug/net7.0/Client.AssemblyInfoInputs.cache
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/obj/Debug/net7.0/Client.AssemblyInfo.cs
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/obj/Debug/net7.0/Client.csproj.CoreCompileInputs.cache
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/obj/Debug/net7.0/Client.dll
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/obj/Debug/net7.0/refint/Client.dll
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/obj/Debug/net7.0/Client.pdb
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/obj/Debug/net7.0/Client.genruntimeconfig.cache
+/Users/lashamorgoshia/Projects/IdentityServer4Client/Client/obj/Debug/net7.0/ref/Client.dll

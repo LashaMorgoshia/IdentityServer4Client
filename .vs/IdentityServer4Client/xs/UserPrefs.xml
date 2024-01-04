@@ -1,0 +1,5 @@
+﻿<Properties StartupConfiguration="{AC2FE873-C929-4287-B7B2-313DEAF08B60}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Client PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.IdentityServer4Client PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
